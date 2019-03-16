@@ -56,12 +56,18 @@ body {
 
 /*/ Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.98px) {
-   .menuimg{
+   .menuimg, .vitoriaimg, .gameoverimg {
+       margin-top: 15px;
        width: 300px;
        height: 280px;
    }
+
    body{
         background-image: url(imagens/imagens/bg.jpg);
         background-size: initial;
     }
+
+    
+
+
 }
