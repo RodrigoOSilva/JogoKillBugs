@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Kill Bugs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="estilo.css">
+    <script src="jogo.js"></script>
+    <link rel="icon" href="imagens/imagens/mosca.png">
+</head>
+<body onresize="ajustaTamanhoPalcoJogo()">
+
+    <div class="painel">
+        <div class="vidas">
+            <img id="v1" src="imagens/imagens/coracao_cheio.png">
+            <img id="v2" src="imagens/imagens/coracao_cheio.png">
+            <img id="v3" src="imagens/imagens/coracao_cheio.png">
+        </div>
+        <div class="cronometro">
+            Tempo Restante: <span id="cronometroid"></span>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('cronometroid').innerHTML = tempo
+
+
+        posicaoRandomica()
+        let criaMosquito = setInterval(function(){
+            posicaoRandomica()
+        },defineTempo)
+    </script>
+</body>
+</html>

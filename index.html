@@ -5,31 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Kill Bugs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="estilo.css">
-    <script src="jogo.js"></script>
     <link rel="icon" href="imagens/imagens/mosca.png">
-</head>
-<body onresize="ajustaTamanhoPalcoJogo()">
+    <script>
+    function iniciarJogo(){
+        let nivel = document.getElementById('nivelid').value
 
-    <div class="painel">
-        <div class="vidas">
-            <img id="v1" src="imagens/imagens/coracao_cheio.png">
-            <img id="v2" src="imagens/imagens/coracao_cheio.png">
-            <img id="v3" src="imagens/imagens/coracao_cheio.png">
+        if(nivel === ''){
+            alert('Selecione um nível')
+            return false
+        }
+        
+        window.location.href = "app.html?" + nivel  //? separa o endereço da var (parametros)
+    }
+    </script>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                <img src="imagens/imagens/game.png">
+                </div>
+            </div>
         </div>
-        <div class="cronometro">
-            Tempo Restante: <span id="cronometroid"></span>
+
+        <div class="row">
+                <div class="col">
+                    <div class="d-flex justify-content-center">
+                        <div class="mb-2">
+                            <select id="nivelid" class="form-control">
+                                <option value="">--Nivel--</option>
+                                <option value="normal">Normal</option>
+                                <option value="difícil">Difícil</option>
+                                <option value="profissional">Profissional</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-danger btn-lg" onclick="iniciarJogo()">Iniciar Jogo</button>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script>
-        document.getElementById('cronometroid').innerHTML = tempo
-
-
-        posicaoRandomica()
-        let criaMosquito = setInterval(function(){
-            posicaoRandomica()
-        },defineTempo)
-    </script>
 </body>
 </html>
